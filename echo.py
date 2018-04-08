@@ -48,7 +48,7 @@ def repeat_all_messages(message): # Название функции не игр�
 			print(message.chat.id ,' << ' , float(a)/float(b))
 		except ValueError:
 			bot.send_message(message.chat.id, 'Not float numbers')
-	bot.send_message(message.chat.id, input())
+	# bot.send_message(message.chat.id, input())
 	
 
 
