@@ -51,7 +51,7 @@ bot = telebot.TeleBot(config.token)
 
 @bot.message_handler(commands=['help', 'start'])
 def send_welcome(message):
-	bot.send_message(message.chat.id, 'I can calculate every two numbers, try it (example: 2+2)')
+	bot.send_message(message.chat.id, 'aI can calculate every two numbers, try it (example: 2+2)')
 	
 @bot.message_handler(func=lambda message: True)
 def echo_message(message):
