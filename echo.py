@@ -13,45 +13,39 @@ def send_welcome(message):
 def repeat_all_messages(message): # Название функции не играет никакой роли, в принципе
 	print(message.chat.id ,' >> ' , message.text)
 	if message.text.find('+') != -1:
-
 		try:
 			a,b = message.text.split('+')
 			c = float(a)+float(b) 
-
 			bot.send_message(message.chat.id, c) 
 			print(message.chat.id ,' << ' , float(a)+float(b))
 		except ValueError:
 			bot.send_message(message.chat.id, 'Not float numbers')
 	elif message.text.find('-') != -1:
-		
 		try:
 			a,b = message.text.split('-')
 			c = float(a)-float(b) 
-
 			bot.send_message(message.chat.id, c)
 			print(message.chat.id ,' << ' , float(a)-float(b))
 		except ValueError:
 			bot.send_message(message.chat.id, 'Not float numbers')
 	elif message.text.find('*') != -1:
-		
 		try:
 			a,b = message.text.split('*')
 			c = float(a)*float(b) 
-
 			bot.send_message(message.chat.id, c)
 			print(message.chat.id ,' << ' , float(a)*float(b))
 		except ValueError:
 			bot.send_message(message.chat.id, 'Not float numbers')
 	elif message.text.find('/') != -1:
-		
 		try:
 			a,b = message.text.split('/')
 			c = float(a)/float(b) 
-
 			bot.send_message(message.chat.id, c)
 			print(message.chat.id ,' << ' , float(a)/float(b))
 		except ValueError:
 			bot.send_message(message.chat.id, 'Not float numbers')
+		except ZeroDivisionError:
+			bot.send_message(message.chat.id, '∞')
 	# bot.send_message(message.chat.id, input())
 	
 
