@@ -7,7 +7,7 @@ bot = telebot.TeleBot(config.token)
 
 @bot.message_handler(commands=['help', 'start'])
 def send_welcome(message):
-	bot.send_message(message.chat.id, 'I can calculate every two numbers, try it (example: 2+2)')
+	bot.send_message(message.chat.id, 'Hey! I can calculate every two numbers, try it (example: 2+2)')
 
 @bot.message_handler(func=lambda message: True)
 def repeat_all_messages(message): # Название функции не играет никакой роли, в принципе
@@ -63,9 +63,9 @@ if __name__ == '__main__':
 			bot.polling(none_stop=True)
 			print('poll')
 		except Exception as err:
-			print('---Internet error!---\n\n')
+			print('---Internet error!---\n')
 			print(err)
-			print('\n\n---------------------')
+			print('\n---------------------')
 			time.sleep(5)
 # if __name__ == '__main__':	 
 	# while True:
