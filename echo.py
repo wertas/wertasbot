@@ -13,8 +13,9 @@ def send_welcome(message):
 def repeat_all_messages(message): # Название функции не играет никакой роли, в принципе
 	print(message.chat.id ,' >> ' , message.text)
 	if message.text.find('+') != -1:
-		a,b = message.text.split('+')
+		
 		try:
+			a,b = message.text.split('+')
 			a = float(a)
 			b = float(b)
 			bot.send_message(message.chat.id, float(a)+float(b))
@@ -22,8 +23,9 @@ def repeat_all_messages(message): # Название функции не игр�
 		except ValueError:
 			bot.send_message(message.chat.id, 'Not float numbers')
 	elif message.text.find('-') != -1:
-		a,b = message.text.split('-')
+		
 		try:
+			a,b = message.text.split('-')
 			a = float(a)
 			b = float(b)
 			bot.send_message(message.chat.id, float(a)-float(b))
@@ -31,8 +33,9 @@ def repeat_all_messages(message): # Название функции не игр�
 		except ValueError:
 			bot.send_message(message.chat.id, 'Not float numbers')
 	elif message.text.find('*') != -1:
-		a,b = message.text.split('*')
+		
 		try:
+			a,b = message.text.split('*')
 			a = float(a)
 			b = float(b)
 			bot.send_message(message.chat.id, float(a)*float(b))
@@ -40,8 +43,9 @@ def repeat_all_messages(message): # Название функции не игр�
 		except ValueError:
 			bot.send_message(message.chat.id, 'Not float numbers')
 	elif message.text.find('/') != -1:
-		a,b = message.text.split('/')
+		
 		try:
+			a,b = message.text.split('/')
 			a = float(a)
 			b = float(b)
 			bot.send_message(message.chat.id, float(a)/float(b))
